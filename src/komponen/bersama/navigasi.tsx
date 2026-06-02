@@ -1,19 +1,32 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Logo from "./logo";
 
 export default function Navigasi() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [isAnimated, setIsAnimated] = useState(false);
+
+    useEffect(() => {
+        if ((window as any).__splashScreenFinished) {
+            setIsAnimated(true);
+        } else {
+            const handleFinished = () => setIsAnimated(true);
+            window.addEventListener("splashScreenFinished", handleFinished);
+            return () => window.removeEventListener("splashScreenFinished", handleFinished);
+        }
+    }, []);
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-dark-900 border-b border-dark-700">
+        <nav className={`fixed top-0 left-0 right-0 z-50 bg-dark-900 border-b border-dark-700 transition-all duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] transform ${
+            isAnimated ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6 pointer-events-none"
+        }`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
                     <Link href="/" className="flex items-center">
-                        <Logo size="sm" className="scale-90" />
+                        <Logo size="md" />
                     </Link>
 
                     {/* Desktop Nav */}
@@ -35,7 +48,7 @@ export default function Navigasi() {
                         </Link>
                         <Link
                             href="/daftar"
-                            className="px-5 py-2 rounded bg-primary-blue hover:bg-primary-blue-hover text-white text-sm font-medium transition-colors"
+                            className="px-5 py-2 rounded-xl bg-primary-blue hover:bg-primary-blue-hover text-white text-sm font-medium transition-colors"
                         >
                             Daftar
                         </Link>
@@ -62,7 +75,7 @@ export default function Navigasi() {
                             <a href="#tentang" className="text-dark-300 hover:text-primary-blue transition-colors px-3 py-2 text-sm font-medium">Tentang</a>
                             <a href="#kontak" className="text-dark-300 hover:text-primary-blue transition-colors px-3 py-2 text-sm font-medium">Kontak</a>
                             <Link href="/login" className="text-dark-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium">Masuk</Link>
-                            <Link href="/daftar" className="mx-3 text-center px-4 py-2 rounded bg-primary-blue text-white text-sm font-medium">Daftar</Link>
+                            <Link href="/daftar" className="mx-3 text-center px-4 py-2 rounded-xl bg-primary-blue text-white text-sm font-medium">Daftar</Link>
                         </div>
                     </div>
                 )}

@@ -72,7 +72,7 @@ export default function DaftarPage() {
                             placeholder="Masukkan nama lengkap"
                             className={`w-full px-5 py-3.5 rounded-xl bg-dark-950/50 border text-white placeholder-dark-500 outline-none transition-all duration-300 focus:ring-2 ${nama.length > 0
                                 ? "border-primary-blue focus:ring-primary-blue/20"
-                                : "border-white/10 focus:border-neon-cyan focus:ring-neon-cyan/20"
+                                : "border-white/10 focus:border-primary-blue focus:ring-primary-blue/20"
                                 }`}
                         />
                     </div>
@@ -91,7 +91,7 @@ export default function DaftarPage() {
                                 ? isEmailValid
                                     ? "border-status-success focus:ring-status-success/20"
                                     : "border-status-error focus:ring-status-error/20"
-                                : "border-white/10 focus:border-neon-cyan focus:ring-neon-cyan/20"
+                                : "border-white/10 focus:border-primary-blue focus:ring-primary-blue/20"
                                 }`}
                         />
                     </div>
@@ -111,7 +111,7 @@ export default function DaftarPage() {
                                     ? isPasswordValid
                                         ? "border-status-success focus:ring-status-success/20"
                                         : "border-status-error focus:ring-status-error/20"
-                                    : "border-white/10 focus:border-neon-cyan focus:ring-neon-cyan/20"
+                                    : "border-white/10 focus:border-primary-blue focus:ring-primary-blue/20"
                                     }`}
                             />
                             <button
@@ -151,7 +151,7 @@ export default function DaftarPage() {
                                     ? isPasswordMatch
                                         ? "border-status-success focus:ring-status-success/20"
                                         : "border-status-error focus:ring-status-error/20"
-                                    : "border-white/10 focus:border-neon-cyan focus:ring-neon-cyan/20"
+                                    : "border-white/10 focus:border-primary-blue focus:ring-primary-blue/20"
                                     }`}
                             />
                             <button
@@ -175,14 +175,14 @@ export default function DaftarPage() {
                             <Check className="absolute w-3.5 h-3.5 text-white opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity" strokeWidth={4} />
                         </div>
                         <span className="text-sm text-dark-300 font-medium group-hover/check:text-white transition-colors leading-tight">
-                            Saya menyetujui seluruh <a href="#" className="text-hyper-violet hover:text-white transition-colors underline underline-offset-2">Protokol Keamanan</a> dan <a href="#" className="text-hyper-violet hover:text-white transition-colors underline underline-offset-2">Kebijakan Privasi</a> FraudGuard.
+                            Saya menyetujui seluruh <a href="#" className="text-hyper-violet hover:text-white transition-colors underline underline-offset-2">Protokol Keamanan</a> dan <a href="#" className="text-hyper-violet hover:text-white transition-colors underline underline-offset-2">Kebijakan Privasi</a> Amankan Fraud.
                         </span>
                     </label>
 
                     {/* Submit */}
                     <button
                         type="submit"
-                        className="w-full py-5 rounded-2xl bg-primary-blue hover:bg-primary-blue-hover text-white font-black text-xl transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] active:scale-95 cursor-pointer"
+                        className="w-full py-4 rounded-xl bg-primary-blue hover:bg-primary-blue-hover text-white font-bold text-lg transition-all active:scale-[0.98] shadow-md cursor-pointer"
                     >
                         INISIASI AKUN
                     </button>

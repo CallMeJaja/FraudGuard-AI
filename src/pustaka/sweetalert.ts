@@ -1,4 +1,4 @@
-// SweetAlert2-inspired theme configuration for FraudGuard AI
+// SweetAlert2-inspired theme configuration for Amankan Fraud
 // This configures the modal styling to match the dark mode theme
 
 export const sweetalertTheme = {

@@ -8,7 +8,7 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                     {/* Brand */}
-                    <div className="lg:col-span-1">
+                    <div className="lg:col-span-1 reveal-on-scroll">
                         <div className="mb-6">
                             <Logo size="sm" className="scale-90 origin-left" />
                         </div>
@@ -30,7 +30,7 @@ export default function Footer() {
                     </div>
 
                     {/* Produk */}
-                    <div>
+                    <div className="reveal-on-scroll" style={{ transitionDelay: "100ms" }}>
                         <h4 className="text-sm font-semibold text-dark-100 uppercase tracking-wider mb-4">Produk</h4>
                         <ul className="space-y-3">
                             {["Deteksi Real-time", "Analisis GNN", "Explainable AI", "Biometrik"].map((item) => (
@@ -42,7 +42,7 @@ export default function Footer() {
                     </div>
 
                     {/* Perusahaan */}
-                    <div>
+                    <div className="reveal-on-scroll" style={{ transitionDelay: "200ms" }}>
                         <h4 className="text-sm font-semibold text-dark-100 uppercase tracking-wider mb-4">Perusahaan</h4>
                         <ul className="space-y-3">
                             {["Tentang Kami", "Karir", "Blog", "Keamanan"].map((item) => (
@@ -54,12 +54,12 @@ export default function Footer() {
                     </div>
 
                     {/* Kontak */}
-                    <div>
+                    <div className="reveal-on-scroll" style={{ transitionDelay: "300ms" }}>
                         <h4 className="text-sm font-semibold text-dark-100 uppercase tracking-wider mb-4">Kontak</h4>
                         <ul className="space-y-3 text-sm text-dark-400">
                             <li className="flex items-center gap-2">
                                 <Mail className="w-4 h-4 text-primary-blue-light shrink-0" strokeWidth={2} />
-                                info@fraudguard.ai
+                                info@amankanfraud.ai
                             </li>
                             <li className="flex items-center gap-2">
                                 <Phone className="w-4 h-4 text-primary-blue-light shrink-0" strokeWidth={2} />
@@ -74,9 +74,9 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom */}
-                <div className="mt-12 pt-8 border-t border-dark-700/50 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="mt-12 pt-8 border-t border-dark-700/50 flex flex-col md:flex-row items-center justify-between gap-4 reveal-on-scroll" style={{ transitionDelay: "400ms" }}>
                     <p className="text-dark-500 text-sm">
-                        © 2026 FraudGuard AI. All rights reserved.
+                        © 2026 Amankan Fraud. All rights reserved.
                     </p>
                     <div className="flex items-center gap-6 text-sm text-dark-500">
                         <a href="#" className="hover:text-dark-300 transition-colors">Kebijakan Privasi</a>

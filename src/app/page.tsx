@@ -1,9 +1,57 @@
+"use client";
+import React, { useEffect } from "react";
 import Navigasi from "@/komponen/bersama/navigasi";
 import Footer from "@/komponen/bersama/footer";
 import Hero from "@/komponen/landing/hero";
 import Fitur from "@/komponen/landing/fitur";
 
 export default function HalamanLanding() {
+  useEffect(() => {
+    let observer: IntersectionObserver | null = null;
+    let revealElements: NodeListOf<Element>;
+
+    const initObserver = () => {
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.15,
+      };
+
+      observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            observer?.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      revealElements = document.querySelectorAll(".reveal-on-scroll");
+      revealElements.forEach((el) => observer?.observe(el));
+    };
+
+    if ((window as any).__splashScreenFinished) {
+      initObserver();
+    } else {
+      const handleFinished = () => {
+        initObserver();
+      };
+      window.addEventListener("splashScreenFinished", handleFinished);
+      return () => {
+        window.removeEventListener("splashScreenFinished", handleFinished);
+        if (observer) {
+          revealElements.forEach((el) => observer?.unobserve(el));
+        }
+      };
+    }
+
+    return () => {
+      if (observer) {
+        revealElements.forEach((el) => observer?.unobserve(el));
+      }
+    };
+  }, []);
+
   return (
     <main className="bg-dark-900 min-h-screen relative overflow-hidden">
       <div className="absolute inset-0 cyber-grid opacity-10 pointer-events-none" />
@@ -13,7 +61,7 @@ export default function HalamanLanding() {
       <Fitur />
 
       {/* CTA Section */}
-      <section id="tentang" className="py-32 relative">
+      <section id="tentang" className="py-32 relative reveal-on-scroll">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary-blue/20 blur-[120px] rounded-full pointer-events-none" />
         
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -32,13 +80,13 @@ export default function HalamanLanding() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <a
                 href="/daftar"
-                className="w-full sm:w-auto px-12 py-5 rounded-2xl bg-white text-dark-900 hover:bg-neon-cyan hover:text-white font-black text-lg transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(6,182,212,0.4)]"
+                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-dark-900 hover:bg-primary-blue hover:text-white font-bold text-base transition-all active:scale-[0.98] shadow-md hover:shadow-lg"
               >
                 Mulai Uji Coba Gratis
               </a>
               <a
                 href="#kontak"
-                className="w-full sm:w-auto px-12 py-5 rounded-2xl glass-panel border-white/10 hover:bg-white/5 text-white font-bold text-lg transition-all"
+                className="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel border-white/10 hover:bg-white/5 text-white font-bold text-base transition-all active:scale-[0.98]"
               >
                 Hubungi Tim Sales
               </a>

@@ -51,12 +51,12 @@ export default function DasborLayout({
 
                         {/* Notification bell */}
                         <button className="relative p-2 md:p-3 rounded-xl glass-panel border-white/5 text-dark-400 hover:text-white hover:border-white/20 transition-all active:scale-95 group/notif">
-                            <Bell className="w-5 h-5 md:w-6 md:h-6 group-hover:glow-cyan transition-all" strokeWidth={1.5} />
-                            <span className="absolute top-2 right-2 md:top-2.5 md:right-2.5 w-2 md:w-3 h-2 md:h-3 bg-neon-cyan rounded-full border-2 border-dark-900 shadow-[0_0_10px_rgba(6,182,212,0.8)] animate-pulse" />
+                            <Bell className="w-5 h-5 md:w-6 md:h-6 transition-all" strokeWidth={1.5} />
+                            <span className="absolute top-2 right-2 md:top-2.5 md:right-2.5 w-2 md:w-3 h-2 md:h-3 bg-neon-cyan rounded-full border-2 border-dark-900 shadow-sm animate-pulse" />
                         </button>
 
                         {/* Profile Placeholder */}
-                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-neon-cyan/30 bg-primary-blue/20 flex items-center justify-center text-neon-cyan font-black text-[10px] md:text-xs tracking-tighter shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-neon-cyan/30 bg-primary-blue/20 flex items-center justify-center text-neon-cyan font-black text-[10px] md:text-xs tracking-tighter shadow-sm">
                           EK
                         </div>
                     </div>

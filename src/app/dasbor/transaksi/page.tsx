@@ -52,8 +52,8 @@ export default function TransaksiPage() {
                     </p>
                 </div>
                 <div className="flex items-center gap-4">
-                    <button className="group relative px-8 py-3.5 rounded-2xl bg-primary-blue text-white font-black text-xs uppercase tracking-[0.2em] transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(59,130,246,0.3)]">
-                        <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
+                    <button className="group relative px-6 py-3 rounded-xl bg-primary-blue text-white font-bold text-xs uppercase tracking-wider transition-all active:scale-[0.98] shadow-sm">
+                        <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
                         Ekspor Intelijen (CSV)
                     </button>
                 </div>
@@ -163,8 +163,8 @@ export default function TransaksiPage() {
                             Halaman Sebelumnya
                         </button>
                         <div className="flex items-center gap-1.5 px-1">
-                          <button className="w-10 h-10 rounded-xl bg-primary-blue text-white text-xs font-black shadow-[0_0_15px_rgba(59,130,246,0.3)]">1</button>
-                          <button className="w-10 h-10 rounded-xl hover:bg-white/5 text-dark-400 hover:text-white text-xs font-black transition-all">2</button>
+                          <button className="w-10 h-10 rounded-xl bg-primary-blue text-white text-xs font-bold shadow-sm">1</button>
+                          <button className="w-10 h-10 rounded-xl hover:bg-white/5 text-dark-400 hover:text-white text-xs font-bold transition-all">2</button>
                           <button className="w-10 h-10 rounded-xl hover:bg-white/5 text-dark-400 hover:text-white text-xs font-black transition-all">3</button>
                         </div>
                         <button className="px-5 py-2.5 rounded-xl border border-white/5 bg-dark-900/50 hover:bg-white/5 text-dark-300 hover:text-white font-black text-[10px] uppercase tracking-widest transition-all">

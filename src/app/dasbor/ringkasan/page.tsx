@@ -103,11 +103,11 @@ export default function RingkasanPage() {
                       Pemantauan infrastruktur: <span className="text-white">Aktif</span>
                     </p>
                 </div>
-                <div className="flex items-center justify-between sm:justify-start gap-4 sm:gap-6 glass-panel px-5 py-3 rounded-2xl border-white/5 bg-white/5">
-                    <div className="flex items-center gap-3">
-                        <span className="relative flex h-3 w-3">
+                <div className="flex items-center justify-between sm:justify-start gap-4 sm:gap-6 glass-panel px-4 py-2.5 rounded-xl border-white/5 bg-white/5">
+                    <div className="flex items-center gap-2.5">
+                        <span className="relative flex h-2 w-2">
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-status-success opacity-75" />
-                          <span className="relative inline-flex rounded-full h-3 w-3 bg-status-success shadow-[0_0_10px_rgba(34,197,94,0.8)]" />
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-status-success" />
                         </span>
                         <span className="text-status-success font-black text-xs uppercase tracking-widest">Sinyal Langsung</span>
                     </div>
@@ -121,13 +121,11 @@ export default function RingkasanPage() {
                 {statsData.map((stat, index) => (
                     <div
                         key={stat.label}
-                        className="glass-panel p-8 rounded-[2rem] transition-all hover:scale-[1.02] hover:bg-white/10 group cursor-default relative overflow-hidden"
+                        className="glass-panel p-6 rounded-2xl transition-all hover:bg-white/5 group cursor-default relative overflow-hidden"
                         style={{ animationDelay: `${index * 0.1}s` }}
                     >
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-primary-blue/10 blur-[60px] rounded-full -mr-16 -mt-16 group-hover:bg-primary-blue/20 transition-all duration-700" />
-                        
-                        <div className="flex items-start justify-between mb-8 relative z-10">
-                            <div className="w-14 h-14 rounded-2xl bg-dark-900 border border-white/5 flex items-center justify-center text-3xl shadow-inner group-hover:glow-cyan transition-all">
+                        <div className="flex items-start justify-between mb-6 relative z-10">
+                            <div className="w-12 h-12 rounded-xl bg-dark-900 border border-white/5 flex items-center justify-center text-2xl shadow-sm group-hover:text-primary-blue transition-colors">
                                 {stat.icon}
                             </div>
                             <div className={`text-[10px] font-black px-3 py-1.5 rounded-full border ${stat.positive
@@ -198,7 +196,7 @@ export default function RingkasanPage() {
                                             <animate attributeName="r" values={`${region.risk / 2};${region.risk / 1};${region.risk / 2}`} dur="4s" repeatCount="indefinite" />
                                             <animate attributeName="opacity" values="0.15;0.05;0.15" dur="4s" repeatCount="indefinite" />
                                         </circle>
-                                        <circle cx={adjX} cy={adjY} r="6" fill={color} className="shadow-[0_0_15px_rgba(255,255,255,0.4)]">
+                                        <circle cx={adjX} cy={adjY} r="5" fill={color}>
                                             <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
                                         </circle>
                                         <text x={adjX} y={adjY - 15} textAnchor="middle" fill="white" fontSize="14" className="font-black uppercase tracking-tighter opacity-0 group-hover/node:opacity-100 transition-opacity duration-300">
@@ -258,21 +256,21 @@ export default function RingkasanPage() {
                 
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
                     <div className="flex items-center gap-4">
-                        <div className="p-3 bg-neon-cyan/10 rounded-2xl border border-neon-cyan/20">
-                            <Zap className="w-6 h-6 text-neon-cyan shadow-[0_0_15px_rgba(6,182,212,0.4)]" strokeWidth={2.5} />
+                        <div className="p-3 bg-primary-blue/10 rounded-xl border border-primary-blue/20">
+                            <Zap className="w-5 h-5 text-primary-blue" strokeWidth={2} />
                         </div>
                         <div>
                             <div className="flex items-center gap-2">
-                                <h3 className="text-2xl font-black text-white tracking-tighter uppercase italic">Feed <span className="text-neon-cyan">Transaksi Mentah</span></h3>
+                                <h3 className="text-xl font-bold text-white tracking-tight uppercase">Feed <span className="text-primary-blue">Transaksi Mentah</span></h3>
                                 <InfoTooltip text="Live stream transaksi terbaru yang diproses sistem. Menampilkan ID node, timestamp, identitas pengirim/penerima, nominal, tingkat ancaman, dan status tindakan secara real-time." />
                             </div>
                             <div className="flex items-center gap-2 mt-1">
-                                <span className="w-1.5 h-1.5 rounded-full bg-status-success animate-pulse" />
-                                <span className="text-[10px] font-black text-dark-500 uppercase tracking-widest">Protokol Dekripsi Langsung Aktif</span>
+                                <span className="w-1.5 h-1.5 rounded-full bg-status-success" />
+                                <span className="text-[10px] font-bold text-dark-500 uppercase tracking-wider">Protokol Dekripsi Langsung Aktif</span>
                             </div>
                         </div>
                     </div>
-                    <Link href="/dasbor/transaksi" className="px-8 py-3.5 rounded-2xl bg-dark-900/50 hover:bg-white/5 text-dark-300 hover:text-white text-xs font-black transition-all border border-white/5 active:scale-95 uppercase tracking-widest">
+                    <Link href="/dasbor/transaksi" className="px-6 py-3 rounded-xl bg-dark-900/50 hover:bg-white/5 text-dark-300 hover:text-white text-xs font-bold transition-all border border-white/5 active:scale-[0.98] uppercase tracking-widest">
                         Akses Database Lengkap
                     </Link>
                 </div>

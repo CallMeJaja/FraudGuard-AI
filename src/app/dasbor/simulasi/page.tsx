@@ -25,9 +25,9 @@ const scenarioConfig = {
         label: "Aktivitas Manusia Normal",
         icon: <UserCheck className="w-5 h-5" />,
         color: "text-status-success",
-        border: "border-status-success/40",
-        bg: "bg-status-success/10",
-        glow: "shadow-[0_0_30px_rgba(16,185,129,0.2)]",
+        border: "border-status-success/30",
+        bg: "bg-status-success/5",
+        glow: "shadow-sm",
         riskScore: () => Math.floor(Math.random() * 20) + 5,
         verdict: "TERVERIFIKASI",
         verdictColor: "text-status-success",
@@ -37,9 +37,9 @@ const scenarioConfig = {
         label: "Otomatisasi Berbasis Bot",
         icon: <Bot className="w-5 h-5" />,
         color: "text-status-error",
-        border: "border-status-error/40",
-        bg: "bg-status-error/10",
-        glow: "shadow-[0_0_30px_rgba(239,68,68,0.2)]",
+        border: "border-status-error/30",
+        bg: "bg-status-error/5",
+        glow: "shadow-sm",
         riskScore: () => Math.floor(Math.random() * 10) + 88,
         verdict: "DIBLOKIR",
         verdictColor: "text-status-error",
@@ -49,9 +49,9 @@ const scenarioConfig = {
         label: "Sindikat / Pencucian Uang",
         icon: <Users className="w-5 h-5" />,
         color: "text-amber-400",
-        border: "border-amber-400/40",
-        bg: "bg-amber-400/10",
-        glow: "shadow-[0_0_30px_rgba(251,191,36,0.2)]",
+        border: "border-amber-400/30",
+        bg: "bg-amber-400/5",
+        glow: "shadow-sm",
         riskScore: () => Math.floor(Math.random() * 8) + 90,
         verdict: "DIBLOKIR",
         verdictColor: "text-status-error",
@@ -215,7 +215,7 @@ export default function SimulasiPage() {
                     </div>
                     <div>
                         <h1 className="text-2xl sm:text-3xl font-black text-white tracking-tighter uppercase italic">
-                            FraudGuard <span className="text-hyper-violet">Terminal Virtual</span>
+                            Amankan Fraud <span className="text-hyper-violet">Terminal Virtual</span>
                         </h1>
                         <p className="text-[10px] font-bold text-dark-500 uppercase tracking-[0.2em] mt-0.5">
                             Mesin Simulasi Deteksi Fraud Berbasis Perilaku

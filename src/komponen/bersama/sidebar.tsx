@@ -113,16 +113,16 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                         >
                             {/* Active Indicator */}
                             {isActive && (
-                              <div className="absolute left-0 w-1 h-6 bg-neon-cyan rounded-full shadow-[0_0_15px_rgba(6,182,212,0.8)]" />
+                              <div className="absolute left-0 w-1 h-6 bg-neon-cyan rounded-full shadow-sm" />
                             )}
                             
-                            <div className={`transition-all duration-300 ${isActive ? 'scale-110 text-neon-cyan glow-cyan' : 'group-hover/nav:scale-110 group-hover/nav:text-white'}`}>
+                            <div className={`transition-all duration-300 ${isActive ? 'scale-105 text-neon-cyan' : 'group-hover/nav:scale-105 group-hover/nav:text-white'}`}>
                               {item.icon}
                             </div>
                             <span className="tracking-wide">{item.label}</span>
                             
                             {isActive && (
-                              <div className="ml-auto w-1.5 h-1.5 rounded-full bg-neon-cyan shadow-[0_0_10px_rgba(6,182,212,0.8)]" />
+                              <div className="ml-auto w-1.5 h-1.5 rounded-full bg-neon-cyan shadow-sm" />
                             )}
                         </Link>
                     );

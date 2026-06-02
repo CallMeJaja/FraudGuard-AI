@@ -59,35 +59,34 @@ body {
   background-size: 40px 40px;
 }
 
-/* Glassmorphism Panel */
+/* Professional Corporate Card */
 .glass-panel {
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-top-color: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  background: #0b1329; /* Solid deep obsidian slate */
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease-in-out;
 }
 
 .glass-panel:hover {
-  border-color: rgba(59, 130, 246, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(37, 99, 235, 0.15);
+  border-color: rgba(59, 130, 246, 0.15);
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.6);
 }
 
 /* Minimalist Form Inputs */
 .input-minimal {
-  background: rgba(2, 6, 23, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(2, 6, 23, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   color: var(--color-dark-100);
   border-radius: 0.75rem;
   padding: 0.75rem 1rem;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s ease;
 }
 
 .input-minimal:focus {
   outline: none;
-  border-color: var(--color-neon-cyan);
-  background: rgba(2, 6, 23, 0.6);
-  box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);
+  border-color: var(--color-primary-blue);
+  background: rgba(2, 6, 23, 0.8);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
 }
 
 /* Glowing Elements */
@@ -132,4 +131,34 @@ body {
 /* Legacy Compat classes (mapping old to new to avoid breaking UI immediately) */
 .card-minimal {
   @apply glass-panel;
+}
+
+/* Scroll Reveal Animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+.delay-600 { transition-delay: 600ms; }
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }

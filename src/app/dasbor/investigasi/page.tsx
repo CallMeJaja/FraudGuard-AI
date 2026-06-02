@@ -110,17 +110,14 @@ export default function InvestigasiPage() {
                             Investigasi mendalam: <span className="text-white">TXN-001 ANOMALI TERDETEKSI</span>
                         </p>
                     </div>
-                    <div className="flex flex-wrap items-center gap-4">
-                        <button onClick={handleSetujui} className="group relative px-6 py-3 rounded-2xl bg-status-success/10 hover:bg-status-success/20 text-status-success border border-status-success/20 font-black text-xs uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-lg">
-                            <div className="absolute inset-0 bg-status-success/5 blur-xl group-hover:opacity-100 opacity-0 transition-opacity" />
+                    <div className="flex flex-wrap items-center gap-3">
+                        <button onClick={handleSetujui} className="group px-5 py-2.5 rounded-xl bg-status-success/10 hover:bg-status-success/20 text-status-success border border-status-success/20 font-bold text-xs uppercase tracking-wider transition-all active:scale-[0.98] shadow-sm">
                             ✓ Setujui Bersih
                         </button>
-                        <button onClick={handleFlag} className="group relative px-6 py-3 rounded-2xl bg-amber-warning/10 hover:bg-amber-warning/20 text-amber-warning border border-amber-warning/20 font-black text-xs uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-lg">
-                            <div className="absolute inset-0 bg-amber-warning/5 blur-xl group-hover:opacity-100 opacity-0 transition-opacity" />
+                        <button onClick={handleFlag} className="group px-5 py-2.5 rounded-xl bg-amber-warning/10 hover:bg-amber-warning/20 text-amber-warning border border-amber-warning/20 font-bold text-xs uppercase tracking-wider transition-all active:scale-[0.98] shadow-sm">
                             ⚑ Tandai Investigasi
                         </button>
-                        <button onClick={handleBlokir} className="group relative px-6 py-3 rounded-2xl bg-status-error/20 hover:bg-status-error/30 text-white border border-status-error/30 font-black text-xs uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(239,68,68,0.2)]">
-                            <div className="absolute inset-0 bg-status-error/10 blur-xl group-hover:opacity-100 opacity-0 transition-opacity" />
+                        <button onClick={handleBlokir} className="group px-5 py-2.5 rounded-xl bg-status-error text-white font-bold text-xs uppercase tracking-wider transition-all active:scale-[0.98] shadow-sm">
                             ✕ Hentikan & Blokir
                         </button>
                     </div>
@@ -171,7 +168,7 @@ export default function InvestigasiPage() {
                         </div>
                         
                         <div className="relative w-56 h-56 z-10">
-                            <svg viewBox="0 0 160 160" className="w-full h-full -rotate-90 drop-shadow-[0_0_20px_rgba(239,68,68,0.3)]">
+                            <svg viewBox="0 0 160 160" className="w-full h-full -rotate-90 drop-shadow-md">
                                 <circle cx="80" cy="80" r="70" fill="none" stroke="rgba(255,255,255,0.03)" strokeWidth="12" />
                                 <circle
                                     cx="80" cy="80" r="70" fill="none" stroke="url(#riskGradient)" strokeWidth="12" strokeLinecap="round"
@@ -187,11 +184,11 @@ export default function InvestigasiPage() {
                             </svg>
                             <div className="absolute inset-0 flex flex-col items-center justify-center">
                                 <span className="text-6xl font-black text-white tracking-tighter">{transaksiDetail.riskScore}</span>
-                                <span className="text-[10px] font-black text-status-error uppercase tracking-[0.2em] mt-1">PERCENTILE</span>
+                                <span className="text-[10px] font-bold text-status-error uppercase tracking-wider mt-1">PERCENTILE</span>
                             </div>
                         </div>
 
-                        <div className="mt-10 px-8 py-3 rounded-2xl bg-status-error/20 text-white text-xs font-black border border-status-error/30 tracking-widest uppercase relative z-10 shadow-[0_0_30px_rgba(239,68,68,0.2)]">
+                        <div className="mt-10 px-6 py-2.5 rounded-xl bg-status-error/10 text-status-error text-xs font-bold border border-status-error/20 tracking-wider uppercase relative z-10 shadow-sm">
                             Status: ANCAMAN KRITIS
                         </div>
                         <p className="text-dark-500 text-[10px] font-bold mt-6 text-center leading-relaxed relative z-10 max-w-[200px] uppercase tracking-tighter">
@@ -220,15 +217,15 @@ export default function InvestigasiPage() {
                                 { color: "bg-status-success", label: "BERSIH" }
                             ].map(item => (
                                 <div key={item.label} className="flex items-center gap-2">
-                                    <span className={`w-2 h-2 rounded-full ${item.color} shadow-[0_0_8px_rgba(0,0,0,0.5)]`} />
-                                    <span className="text-[9px] font-black text-dark-400 tracking-widest uppercase">{item.label}</span>
+                                    <span className={`w-2 h-2 rounded-full ${item.color} shadow-sm`} />
+                                    <span className="text-[9px] font-bold text-dark-400 tracking-wider uppercase">{item.label}</span>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    <div className="relative bg-dark-950/60 rounded-[2rem] border border-white/5 overflow-hidden shadow-inner aspect-[3/4] sm:aspect-[16/9] lg:aspect-[21/9]">
-                        <svg viewBox="0 0 600 500" className="w-full h-full p-6 md:p-10 drop-shadow-[0_0_50px_rgba(59,130,246,0.1)]" xmlns="http://www.w3.org/2000/svg">
+                    <div className="relative bg-dark-950/60 rounded-2xl border border-white/5 overflow-hidden shadow-inner aspect-[3/4] sm:aspect-[16/9] lg:aspect-[21/9]">
+                        <svg viewBox="0 0 600 500" className="w-full h-full p-6 md:p-10 drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
                             {/* Connection Lines (Edges) */}
                             {gnnEdges.map((edge, i) => {
                                 const from = getNodeById(edge.from);
@@ -303,7 +300,7 @@ export default function InvestigasiPage() {
                                         <div className="text-[10px] font-black font-mono text-dark-500">{(feature.importance * 100).toFixed(0)}%</div>
                                     </div>
                                     <div className="h-2.5 bg-dark-900 rounded-full overflow-hidden p-[1px] border border-white/5 shadow-inner">
-                                        <div className={`h-full rounded-full ${barColor} shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all duration-1000`} style={{ width: `${feature.importance * 100}%` }} />
+                                        <div className={`h-full rounded-full ${barColor} shadow-sm transition-all duration-1000`} style={{ width: `${feature.importance * 100}%` }} />
                                     </div>
                                 </div>
                             );

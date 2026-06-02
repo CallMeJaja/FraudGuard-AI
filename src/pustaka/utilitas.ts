@@ -1,4 +1,4 @@
-// Utility helpers for FraudGuard AI
+// Utility helpers for Amankan Fraud
 
 export function cn(...classes: (string | undefined | false | null)[]): string {
     return classes.filter(Boolean).join(" ");

@@ -9,7 +9,7 @@ import Logo from "@/komponen/bersama/logo";
 import { Eye, EyeOff, Check } from "lucide-react";
 
 // Test credentials
-const TEST_EMAIL = "admin@fraudguard.ai";
+const TEST_EMAIL = "admin@amankanfraud.ai";
 const TEST_PASSWORD = "admin1234";
 
 export default function LoginPage() {
@@ -33,7 +33,7 @@ export default function LoginPage() {
             tampilSukses("Berhasil!", "Login berhasil. Mengalihkan ke Dashboard...");
             setTimeout(() => router.push("/dasbor/ringkasan"), 1500);
         } else {
-            tampilError("Login Gagal!", "Email atau password salah. Gunakan: admin@fraudguard.ai / admin1234");
+            tampilError("Login Gagal!", "Email atau password salah. Gunakan: admin@amankanfraud.ai / admin1234");
         }
     };
 
@@ -72,7 +72,7 @@ export default function LoginPage() {
                                 ? isEmailValid
                                     ? "border-status-success focus:ring-status-success/20"
                                     : "border-status-error focus:ring-status-error/20"
-                                : "border-white/10 focus:border-neon-cyan focus:ring-neon-cyan/20 focus:shadow-[0_0_20px_rgba(6,182,212,0.15)]"
+                                : "border-white/10 focus:border-primary-blue focus:ring-primary-blue/20"
                                 }`}
                         />
                     </div>
@@ -92,7 +92,7 @@ export default function LoginPage() {
                                     ? isPasswordValid
                                         ? "border-status-success focus:ring-status-success/20"
                                         : "border-status-error focus:ring-status-error/20"
-                                    : "border-white/10 focus:border-neon-cyan focus:ring-neon-cyan/20 focus:shadow-[0_0_20px_rgba(6,182,212,0.15)]"
+                                    : "border-white/10 focus:border-primary-blue focus:ring-primary-blue/20"
                                     }`}
                             />
                             <button
@@ -126,7 +126,7 @@ export default function LoginPage() {
                     {/* Submit */}
                     <button
                         type="submit"
-                        className="w-full py-5 rounded-2xl bg-primary-blue hover:bg-primary-blue-hover text-white font-black text-xl transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] active:scale-95 cursor-pointer"
+                        className="w-full py-4 rounded-xl bg-primary-blue hover:bg-primary-blue-hover text-white font-bold text-lg transition-all active:scale-[0.98] shadow-md cursor-pointer"
                     >
                         AUTENTIKASI SEKARANG
                     </button>

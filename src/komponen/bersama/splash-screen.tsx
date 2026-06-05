@@ -1,13 +1,21 @@
 "use client";
+
 import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function SplashScreen() {
+    const pathname = usePathname();
+    const isDashboard = pathname?.startsWith("/dasbor");
+
     const [progress, setProgress] = useState(0);
     const [statusText, setStatusText] = useState("INITIATING SECURITY PROTOCOLS...");
     const [visible, setVisible] = useState(true);
     const [mounted, setMounted] = useState(true);
 
     useEffect(() => {
+        if (isDashboard) {
+            return;
+        }
         // Prevent scroll when loading
         document.body.style.overflow = "hidden";
 
@@ -49,7 +57,7 @@ export default function SplashScreen() {
         };
     }, []);
 
-    if (!mounted) return null;
+    if (isDashboard || !mounted) return null;
 
     return (
         <div

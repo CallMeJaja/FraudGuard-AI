@@ -52,6 +52,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
     const [showLogoutModal, setShowLogoutModal] = useState(false);
 
     const handleLogout = () => {
+        localStorage.removeItem("telah_baca_peringatan_ai");
         setShowLogoutModal(false);
         onClose();
         router.push("/");

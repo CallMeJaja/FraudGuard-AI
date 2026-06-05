@@ -67,6 +67,17 @@ export default function TransaksiPage() {
         setCurrentPage(1);
     }, [searchTerm, filterRisk]);
 
+    // Menangkap prefill pencarian dari global search
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            const prefill = sessionStorage.getItem("fg_search_prefill");
+            if (prefill) {
+                setSearchTerm(prefill);
+                sessionStorage.removeItem("fg_search_prefill");
+            }
+        }
+    }, []);
+
     // Menangani tombol ESC untuk menutup modal
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {

@@ -94,12 +94,12 @@ export default function Hero() {
                         <div className={`flex flex-col sm:flex-row items-center gap-6 pt-4 transition-all duration-1000 delay-300 ease-[cubic-bezier(0.22,1,0.36,1)] transform ${
                             isAnimated ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
                         }`}>
-                            <a
+                            <Link
                                 href="/dasbor/ringkasan"
                                 className="w-full sm:w-auto px-8 py-4 rounded-xl bg-primary-blue hover:bg-primary-blue-hover text-white font-bold text-base transition-all active:scale-[0.98] shadow-md hover:shadow-lg text-center"
                             >
                                 Mulai Integrasi Sekarang
-                            </a>
+                            </Link>
                             <Link
                                 href="/dasbor/ringkasan"
                                 className="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel text-white font-bold text-base transition-all hover:bg-white/5 text-center active:scale-[0.98]"

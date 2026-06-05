@@ -3,6 +3,7 @@ import { useState, useMemo } from "react";
 import { Calendar, Brain, ShieldCheck, Search, FileText, Download, X, Settings, Plus, Check, Clock, RefreshCw, AlertTriangle } from "lucide-react";
 import InfoTooltip from "@/komponen/ui/info-tooltip";
 import { dashboardSummary, rawModelMetrics } from "@/pustaka/data-fraudguard";
+import { generateFeedAncamanPdf, generateAuditGnnPdf, generateKepatuhanPdf, generateGenericReportPdf } from "@/pustaka/generate-pdf";
 
 // ─── Tipe ────────────────────────────────────────────────────────────────────
 type LaporanItem = {
@@ -101,16 +102,25 @@ export default function LaporanPage() {
     const handleDownload = (id: number) => {
         if (downloading === id) return;
         setDownloading(id);
+        const lap = laporanData.find(l => l.id === id);
         setTimeout(() => {
+            if (lap) {
+                generateGenericReportPdf(lap.nama, lap.tipe);
+            }
             setDownloading(null);
             setDownloadedIds(prev => new Set(prev).add(id));
-        }, 2000);
+        }, 1500);
     };
 
     const handleGeneratePdf = (key: CardKey) => {
         if (generateStatus[key] !== "idle") return;
         setGenerateStatus(prev => ({ ...prev, [key]: "generating" }));
         setTimeout(() => {
+            // Generate the actual PDF
+            if (key === "feed") generateFeedAncamanPdf();
+            else if (key === "gnn") generateAuditGnnPdf();
+            else if (key === "kepatuhan") generateKepatuhanPdf();
+
             setGenerateStatus(prev => ({ ...prev, [key]: "done" }));
             setGeneratedCards(prev => new Set(prev).add(key));
             // Tambah entri baru ke tabel riwayat
